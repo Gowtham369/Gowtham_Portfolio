@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Gowtham_Portfolio/static/css/main.160731fc.chunk.css",
+    "main.css": "/Gowtham_Portfolio/static/css/main.b28cc849.chunk.css",
     "main.js": "/Gowtham_Portfolio/static/js/main.04658e34.chunk.js",
     "main.js.map": "/Gowtham_Portfolio/static/js/main.04658e34.chunk.js.map",
     "runtime-main.js": "/Gowtham_Portfolio/static/js/runtime-main.f51f9601.js",
@@ -12,17 +12,17 @@
     "static/js/3.819c32e3.chunk.js.map": "/Gowtham_Portfolio/static/js/3.819c32e3.chunk.js.map",
     "index.html": "/Gowtham_Portfolio/index.html",
     "static/css/2.6c0f60ba.chunk.css.map": "/Gowtham_Portfolio/static/css/2.6c0f60ba.chunk.css.map",
-    "static/css/main.160731fc.chunk.css.map": "/Gowtham_Portfolio/static/css/main.160731fc.chunk.css.map",
+    "static/css/main.b28cc849.chunk.css.map": "/Gowtham_Portfolio/static/css/main.b28cc849.chunk.css.map",
     "static/js/2.ddf242f7.chunk.js.LICENSE.txt": "/Gowtham_Portfolio/static/js/2.ddf242f7.chunk.js.LICENSE.txt",
     "static/media/developer.0bc93163.svg": "/Gowtham_Portfolio/static/media/developer.0bc93163.svg",
-    "static/media/portfolio-photo1.8ce8a1bb.png": "/Gowtham_Portfolio/static/media/portfolio-photo1.8ce8a1bb.png",
-    "static/media/Style.scss": "/Gowtham_Portfolio/static/media/welcomebanner.3f588c66.png"
+    "static/media/Style.scss": "/Gowtham_Portfolio/static/media/welcomebanner.3f588c66.png",
+    "static/media/portfolio-photo1.8ce8a1bb.png": "/Gowtham_Portfolio/static/media/portfolio-photo1.8ce8a1bb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f51f9601.js",
     "static/css/2.6c0f60ba.chunk.css",
     "static/js/2.ddf242f7.chunk.js",
-    "static/css/main.160731fc.chunk.css",
+    "static/css/main.b28cc849.chunk.css",
     "static/js/main.04658e34.chunk.js"
   ]
 }
