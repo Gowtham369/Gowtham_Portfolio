@@ -133,8 +133,8 @@ $section-details-variant: #77b8ee;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: rgb(124, 77, 235);
-    animation: load 1s linear infinite;
-    @keyframes load {
+    animation: homedetail 1s linear infinite;
+    @keyframes homedetail {
       0% {
         transform: scale(0.985);
       }
