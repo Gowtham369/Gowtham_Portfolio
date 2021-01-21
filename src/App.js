@@ -25,10 +25,12 @@ function App() {
     return (
       <div className="App">
         <Navbar navbar={portfoliodata.basics.profiles} />
-        <Home home={portfoliodata.basics} />
-        <About about={portfoliodata} />
-        <Education education={portfoliodata.education} />
-        <Contact />
+        <div className="sub-App">
+          <Home home={portfoliodata.basics} />
+          <About about={portfoliodata} />
+          <Education education={portfoliodata.education} />
+          <Contact />
+        </div>
       </div>
     );
 }
