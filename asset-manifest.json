@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Gowtham_Portfolio/static/css/main.47d2f30b.chunk.css",
+    "main.css": "/Gowtham_Portfolio/static/css/main.2e7a51b3.chunk.css",
     "main.js": "/Gowtham_Portfolio/static/js/main.600a014a.chunk.js",
     "main.js.map": "/Gowtham_Portfolio/static/js/main.600a014a.chunk.js.map",
     "runtime-main.js": "/Gowtham_Portfolio/static/js/runtime-main.c7c082ef.js",
@@ -12,7 +12,7 @@
     "static/js/3.3e5868fc.chunk.js.map": "/Gowtham_Portfolio/static/js/3.3e5868fc.chunk.js.map",
     "index.html": "/Gowtham_Portfolio/index.html",
     "static/css/2.6c0f60ba.chunk.css.map": "/Gowtham_Portfolio/static/css/2.6c0f60ba.chunk.css.map",
-    "static/css/main.47d2f30b.chunk.css.map": "/Gowtham_Portfolio/static/css/main.47d2f30b.chunk.css.map",
+    "static/css/main.2e7a51b3.chunk.css.map": "/Gowtham_Portfolio/static/css/main.2e7a51b3.chunk.css.map",
     "static/js/2.6a6d2b9d.chunk.js.LICENSE.txt": "/Gowtham_Portfolio/static/js/2.6a6d2b9d.chunk.js.LICENSE.txt",
     "static/media/developer.0bc93163.svg": "/Gowtham_Portfolio/static/media/developer.0bc93163.svg",
     "static/media/Style.scss": "/Gowtham_Portfolio/static/media/welcomebanner.3f588c66.png",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.c7c082ef.js",
     "static/css/2.6c0f60ba.chunk.css",
     "static/js/2.6a6d2b9d.chunk.js",
-    "static/css/main.47d2f30b.chunk.css",
+    "static/css/main.2e7a51b3.chunk.css",
     "static/js/main.600a014a.chunk.js"
   ]
 }
