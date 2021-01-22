@@ -51,6 +51,7 @@ export default function Navbar(props) {
                 url={data.url}
                 title={data.network}
                 className="socialicons"
+                target="_blank"
               />
             );
           })}
