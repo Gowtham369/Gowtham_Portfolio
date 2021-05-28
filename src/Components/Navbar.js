@@ -27,9 +27,9 @@ export default function Navbar(props) {
         className={navbarstatus ? "navbar unhide" : "navbar"}
       >
         <Link to="home" smooth={true} duration={500}>
-          <img alt="logo" src={logo} className="logo" />
+          <img data-aos="fade-down" alt="logo" src={logo} className="logo" />
         </Link>
-        <div className="navlinks">
+        <div data-aos="fade-right" className="navlinks">
           <Link to="about" spy={true} smooth={true} duration={500}>
             <RiProfileLine />
             <div>About</div>
@@ -43,7 +43,7 @@ export default function Navbar(props) {
             <div>Contact</div>
           </Link>
         </div>
-        <div className="socialicons-container">
+        <div data-aos="fade-left" className="socialicons-container">
           {props.navbar.map((data, i) => {
             return (
               <SocialIcon

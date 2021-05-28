@@ -6,7 +6,7 @@ import "react-circular-progressbar/dist/styles.css";
 export default function About(props) {
   return (
     <div className="about" id="about">
-      <div className="about-summary">
+      <div data-aos="fade" className="about-summary">
         <div>
           <BsInfoCircle title="About" className="info-icon" />
         </div>
@@ -17,7 +17,7 @@ export default function About(props) {
         <div className="skills-group">
           {props.about.skills.map((data, i) => {
             return (
-              <div key={i} className="skills">
+              <div key={i} data-aos="zoom-in-down" className="skills">
                 <CircularProgressbarWithChildren value={data.yearsOfExperience}>
                   {data.name}
                 </CircularProgressbarWithChildren>
@@ -31,7 +31,7 @@ export default function About(props) {
         <div className="projects-group">
           {props.about.projects.map((data, i) => {
             return (
-              <div key={i} className="projects">
+              <div data-aos="zoom-out" key={i} className="projects"  style={{backgroundImage:"linear-gradient(rgba(255 255 255 / 44%),rgba(255 255 255 / 0%)),url("+data.images[0].resolutions.desktop.url+")"}}>
                 <div className="proj-title">{data.displayName}</div>
                 <div className="project-details">
                   <div>
@@ -72,7 +72,7 @@ export default function About(props) {
         <div className="languages-group">
           {props.about.languages.map((data, i) => {
             return (
-              <div key={i} className="languages">
+              <div data-aos="zoom-in-up" key={i} className="languages">
                 <div>{data.language}</div>
                 <div>{data.fluency}</div>
               </div>

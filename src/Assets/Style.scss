@@ -2,7 +2,7 @@ $navbarcolor: #efc006;
 $section-details-variant: #77b8ee;
 .sub-App {
   margin-left: 105px;
-  transition: margin 0.4s ease;
+  transition: margin 0.5s ease-in-out;
   @media (max-width: 765px) {
     margin: 0;
   }
@@ -164,6 +164,7 @@ $section-details-variant: #77b8ee;
   right: 5px;
   margin: 0;
   transition: margin 0.7s linear;
+  transition-property: opacity, transform;
   animation: photo 2s linear infinite;
   @keyframes photo {
     0% {
@@ -178,8 +179,6 @@ $section-details-variant: #77b8ee;
   }
   @media (max-width: 790px) {
     margin-top: 230px;
-    margin-bottom: 250px;
-    /* left: 80px; */
     right: 0px;
   }
   @media (max-width: 640px) {
@@ -306,17 +305,15 @@ $section-details-variant: #77b8ee;
     .skills-group {
       margin: 30px 0px;
       padding-left: 10px;
-      @media (max-width: 800px) {
-        display: block;
-      }
-      @media (min-width: 801px) {
-        display: flex;
-        justify-content: space-evenly;
-      }
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
     }
     .skills {
       margin: 5px;
       width: 100px;
+      min-width: 110px;
+      margin: 10px 15px;
       float: left;
     }
     overflow: hidden;
@@ -339,12 +336,11 @@ $section-details-variant: #77b8ee;
       width: 300px;
       height: 200px;
 
-      background-image: linear-gradient(
+      /* background-image: linear-gradient(
           rgba(255, 255, 255, 0.438),
           rgba(255, 255, 255, 0)
         ),
-        url("welcomebanner.png");
-      transition: background-image 1s ease;
+        url("welcomebanner.png"); */
       background-position: center;
       background-size: cover;
       .proj-title {
@@ -377,8 +373,7 @@ $section-details-variant: #77b8ee;
         background-image: linear-gradient(
             rgba(255, 255, 255, 0.123),
             rgba(255, 255, 255, 0.4)
-          ),
-          url("welcomebanner.png");
+          );
         .proj-title {
           margin-top: -10%;
         }
@@ -463,6 +458,7 @@ $section-details-variant: #77b8ee;
     width: 60%;
     max-width: 650px;
     transition: background-color 0.5s linear;
+    transition-property: opacity, transform;
     &:nth-child(odd) {
       float: right;
     }
@@ -520,7 +516,7 @@ $section-details-variant: #77b8ee;
 
 .contact {
   height: 100vh;
-
+  overflow: auto;
   padding: 140px 5% 0 5%;
   > div:nth-child(1) {
     font-size: 20px;
@@ -530,10 +526,39 @@ $section-details-variant: #77b8ee;
     padding: 40px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
+    @media (max-width: 425px) {
+      opacity: 1 !important;
+      transform: none;
+    }
     .form-control {
       background-color: rgba(129, 152, 163, 0.295);
       overflow: hidden;
-      margin: 10px 0;
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      transition: width 0.4s ease;
+      width: 96%;
+      &:hover {
+        width: 100%;
+      }
+    }
+    .alert {
+      width: 95%;
+      margin: auto;
+      padding: 2px;
+      padding-right: 10px;
+      margin-bottom: 10px;
+      .close {
+        padding: 0 8px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .btn {
+      border-radius: 22px;
+      width: 20%;
+      min-width: 77px;
     }
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 
 export default function Contact() {
   const [validemail, setValidmail] = useState(true);
@@ -8,6 +8,9 @@ export default function Contact() {
   const [validemailres, setValidemailres] = useState("");
   const [validenameres, setValidnameres] = useState("");
   const [validmessage, setValidmessage] = useState(true);
+  const [show, setShow] = useState(false);
+  const [contactrequestres, setContactrequestres] = useState("");
+
   function sendEmail(e) {
     e.preventDefault();
     if (e.target.elements.namedItem("user_name").value === "") {
@@ -38,6 +41,8 @@ export default function Contact() {
       setValidmail(true);
       setValidmessage(true);
       setValidname(true);
+      setContactrequestres("Sending...");
+      setShow(true);
       emailjs
         .sendForm(
           "service_49ov9zs",
@@ -47,7 +52,10 @@ export default function Contact() {
         )
         .then(
           (result) => {
-            console.log(result.text);
+            console.log(result.status);
+            if (result.status === 200) {
+              setContactrequestres("Your request recieved.");
+            }
           },
           (error) => {
             console.log(error.text);
@@ -58,8 +66,12 @@ export default function Contact() {
   }
   return (
     <div className="contact" id="contact">
-      <div>Get in touch with me</div>
-      <Form className="contact-form" onSubmit={sendEmail}>
+      <div data-aos="fade-right">Get in touch with me</div>
+      <Form
+        data-aos="fade-up-right"
+        className="contact-form"
+        onSubmit={sendEmail}
+      >
         <Form.Control type="text" placeholder="Name" name="user_name" />
         {validname ? <></> : <div>{validenameres}</div>}
 
@@ -67,6 +79,9 @@ export default function Contact() {
         {validemail ? <></> : <div>{validemailres}</div>}
         <Form.Control as="textarea" placeholder="Message" name="message" />
         {validmessage ? <></> : <div>Message cannot be empty</div>}
+        <Alert show={show} onClose={() => setShow(false)} dismissible>
+          {contactrequestres}
+        </Alert>
         <Button type="submit" value="Send">
           Submit
         </Button>

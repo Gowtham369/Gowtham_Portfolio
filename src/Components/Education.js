@@ -6,7 +6,7 @@ export default function Education(props) {
       <div className="edu-title">Education</div>
       {props.education.map((data, i) => {
         return (
-          <div key={i} className="educationcards">
+          <div data-aos="zoom-in" key={i} className="educationcards">
             <div>{data.institution}</div>
             <div className="flex-edu-details">
               <div className="col-6">

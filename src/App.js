@@ -8,9 +8,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Home from "./Components/Home";
 import loadingsvg from "./Assets/developer.svg";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 function App() {
   const [portfoliodata, setPortfoliodata] = useState();
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   useEffect(() => {
     axios("https://gitconnected.com/v1/portfolio/gowtham369").then(
       (response) => {
@@ -26,10 +31,10 @@ function App() {
       <div className="App">
         <Navbar navbar={portfoliodata.basics.profiles} />
         <div className="sub-App">
-          <Home home={portfoliodata.basics} />
-          <About about={portfoliodata} />
-          <Education education={portfoliodata.education} />
-          <Contact />
+          <Home data-aos="zoom-in" home={portfoliodata.basics} />
+          <About data-aos="flip-left" about={portfoliodata} />
+          <Education data-aos="flip-left" education={portfoliodata.education} />
+          <Contact data-aos="flip-left" />
         </div>
       </div>
     );
