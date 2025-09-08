@@ -1,28 +1,16 @@
 {
   "files": {
-    "main.css": "/Gowtham_Portfolio/static/css/main.bb0a4744.chunk.css",
-    "main.js": "/Gowtham_Portfolio/static/js/main.e9c75918.chunk.js",
-    "main.js.map": "/Gowtham_Portfolio/static/js/main.e9c75918.chunk.js.map",
-    "runtime-main.js": "/Gowtham_Portfolio/static/js/runtime-main.ccbf0720.js",
-    "runtime-main.js.map": "/Gowtham_Portfolio/static/js/runtime-main.ccbf0720.js.map",
-    "static/css/2.812bdb6b.chunk.css": "/Gowtham_Portfolio/static/css/2.812bdb6b.chunk.css",
-    "static/js/2.487fb2d7.chunk.js": "/Gowtham_Portfolio/static/js/2.487fb2d7.chunk.js",
-    "static/js/2.487fb2d7.chunk.js.map": "/Gowtham_Portfolio/static/js/2.487fb2d7.chunk.js.map",
-    "static/js/3.a3effe07.chunk.js": "/Gowtham_Portfolio/static/js/3.a3effe07.chunk.js",
-    "static/js/3.a3effe07.chunk.js.map": "/Gowtham_Portfolio/static/js/3.a3effe07.chunk.js.map",
+    "main.css": "/Gowtham_Portfolio/static/css/main.6263efa5.css",
+    "main.js": "/Gowtham_Portfolio/static/js/main.ffa38d1d.js",
+    "static/js/488.adfe11e4.chunk.js": "/Gowtham_Portfolio/static/js/488.adfe11e4.chunk.js",
+    "static/media/LinkedinPhoto.jpg": "/Gowtham_Portfolio/static/media/LinkedinPhoto.85925068e2ab36ecc30f.jpg",
     "index.html": "/Gowtham_Portfolio/index.html",
-    "static/css/2.812bdb6b.chunk.css.map": "/Gowtham_Portfolio/static/css/2.812bdb6b.chunk.css.map",
-    "static/css/main.bb0a4744.chunk.css.map": "/Gowtham_Portfolio/static/css/main.bb0a4744.chunk.css.map",
-    "static/js/2.487fb2d7.chunk.js.LICENSE.txt": "/Gowtham_Portfolio/static/js/2.487fb2d7.chunk.js.LICENSE.txt",
-    "static/media/developer.0bc93163.svg": "/Gowtham_Portfolio/static/media/developer.0bc93163.svg",
-    "static/media/Style.scss": "/Gowtham_Portfolio/static/media/home-background.ea171755.jpg",
-    "static/media/portfolio-photo1.8fde5742.png": "/Gowtham_Portfolio/static/media/portfolio-photo1.8fde5742.png"
+    "main.6263efa5.css.map": "/Gowtham_Portfolio/static/css/main.6263efa5.css.map",
+    "main.ffa38d1d.js.map": "/Gowtham_Portfolio/static/js/main.ffa38d1d.js.map",
+    "488.adfe11e4.chunk.js.map": "/Gowtham_Portfolio/static/js/488.adfe11e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.ccbf0720.js",
-    "static/css/2.812bdb6b.chunk.css",
-    "static/js/2.487fb2d7.chunk.js",
-    "static/css/main.bb0a4744.chunk.css",
-    "static/js/main.e9c75918.chunk.js"
+    "static/css/main.6263efa5.css",
+    "static/js/main.ffa38d1d.js"
   ]
 }
