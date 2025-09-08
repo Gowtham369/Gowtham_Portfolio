@@ -1,62 +1,84 @@
-import React, { useState } from "react";
-import { Link } from "react-scroll";
-import logo from "../Assets/gowtham-portfolio-logo.png";
-import { RiProfileLine, RiContactsBookLine } from "react-icons/ri";
-import { FaSchool } from "react-icons/fa";
-import { SocialIcon } from "react-social-icons";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-export default function Navbar(props) {
-  const [navbarstatus, setNavbarstatus] = useState(false);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
+
+  const navItems = [
+    { name: 'Home', href: '#hero' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => item.href.substring(1));
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i]);
+        if (element && element.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
 
   return (
-    <div>
-      {navbarstatus ? (
-        <AiOutlineClose
-          onClick={() => setNavbarstatus(false)}
-          className="close-btn"
-        />
-      ) : (
-        <AiOutlineMenu
-          onClick={() => setNavbarstatus(true)}
-          className="menu-btn"
-        />
-      )}
-      <div
-        onClickCapture={() => setNavbarstatus(false)}
-        className={navbarstatus ? "navbar unhide" : "navbar"}
-      >
-        <Link to="home" smooth={true} duration={500}>
-          <img data-aos="fade-down" alt="logo" src={logo} className="logo" />
-        </Link>
-        <div data-aos="fade-right" className="navlinks">
-          <Link to="about" spy={true} smooth={true} duration={500}>
-            <RiProfileLine />
-            <div>About</div>
-          </Link>
-          <Link to="education" spy={true} smooth={true} duration={500}>
-            <FaSchool />
-            <div>Education</div>
-          </Link>
-          <Link to="contact" spy={true} smooth={true} duration={500}>
-            <RiContactsBookLine />
-            <div>Contact</div>
-          </Link>
+    <motion.nav 
+      className="navbar"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="nav-container">
+        <div className="nav-logo">
+          Gowtham
         </div>
-        <div data-aos="fade-left" className="socialicons-container">
-          {props.navbar.map((data, i) => {
-            return (
-              <SocialIcon
-                key={i}
-                url={data.url}
-                title={data.network}
-                className="socialicons"
-                target="_blank"
-              />
-            );
-          })}
-        </div>
+        
+        <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
+          {navItems.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className={activeSection === item.href.substring(1) ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        
+        <button 
+          className="nav-toggle"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
-    </div>
+    </motion.nav>
   );
-}
+};
+
+export default Navbar;

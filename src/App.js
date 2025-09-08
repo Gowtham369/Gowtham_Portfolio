@@ -1,43 +1,55 @@
-import "./App.css";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
-import Education from "./Components/Education";
-import Navbar from "./Components/Navbar";
-import "./Assets/Style.scss";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Home from "./Components/Home";
-import loadingsvg from "./Assets/developer.svg";
-import "aos/dist/aos.css";
-import Aos from "aos";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import axios from 'axios';
+import Navbar from './Components/Navbar';
+import Hero from './Components/Hero';
+import About from './Components/About';
+import Skills from './Components/Skills';
+import Projects from './Components/Projects';
+import Experience from './Components/Experience';
+import Contact from './Components/Contact';
+import LoadingSpinner from './Components/LoadingSpinner';
+import './Assets/Style.css';
 
 function App() {
-  const [portfoliodata, setPortfoliodata] = useState();
+  const [portfolioData, setPortfolioData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    Aos.init({ duration: 1500 });
-  }, []);
-  useEffect(() => {
-    axios("https://gitconnected.com/v1/portfolio/gowtham369").then(
-      (response) => {
-        setPortfoliodata(response.data);
-        console.log(response);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://gitconnected.com/v1/portfolio/gowtham369');
+        setPortfolioData(response.data);
+      } catch (error) {
+        console.error('Error fetching portfolio data:', error);
+      } finally {
+        setLoading(false);
       }
-    );
+    };
+    fetchData();
   }, []);
-  if (!portfoliodata)
-    return <img src={loadingsvg} alt="Loading Logo" className="loadingsvg" />;
-  if (portfoliodata)
-    return (
-      <div className="App">
-        <Navbar navbar={portfoliodata.basics.profiles} />
-        <div className="sub-App">
-          <Home data-aos="zoom-in" home={portfoliodata.basics} />
-          <About data-aos="flip-left" about={portfoliodata} />
-          <Education data-aos="flip-left" education={portfoliodata.education} />
-          <Contact data-aos="flip-left" />
-        </div>
-      </div>
-    );
+
+  if (loading) return <LoadingSpinner />;
+  if (!portfolioData) return <div className="error">Failed to load portfolio data</div>;
+
+  return (
+    <motion.div 
+      className="app"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Navbar />
+      <main>
+        <Hero data={portfolioData.basics} />
+        <About data={portfolioData} />
+        <Skills data={portfolioData.skills} />
+        <Projects data={portfolioData.projects} />
+        <Experience data={portfolioData.work} />
+        <Contact data={portfolioData.basics} />
+      </main>
+    </motion.div>
+  );
 }
 
 export default App;
