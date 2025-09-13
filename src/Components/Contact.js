@@ -58,7 +58,7 @@ const Contact = ({ data }) => {
     {
       icon: <FaMapMarkerAlt />,
       title: 'Location',
-      value: data?.location?.city || data?.locationAsString || 'India',
+      value: data?.location?.city || data?.locationAsString || 'USA',
       link: null
     },
     {
